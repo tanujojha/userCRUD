@@ -1,0 +1,8 @@
+.profilepagediv{
+    background-color: rgb(187, 187, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+}

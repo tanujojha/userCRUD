@@ -1,0 +1,23 @@
+
+:root{
+    --font_Arima_Madurai: 'Arima Madurai', cursive;
+    --font_Dongle: 'Dongle', sans-serif;
+    --font_Julee: 'Julee', cursive;
+    --font_Rubik: 'Rubik', sans-serif;
+}
+
+
+#head{
+    font-family: var(--font_Julee);
+    font-size: 2.5em;
+}
+
+.searchicon{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+    #head {
+      margin-left: 1px;
+    }
+  }
