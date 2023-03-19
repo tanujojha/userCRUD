@@ -15,9 +15,9 @@ function App() {
     <div className="App">
       <Navbar/>
       <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='/profile' element={<ProfilePage/>}/>
-        <Route path='/edit' element={<EditPage/>}/>
+        <Route path='/' element={<MainPage />}/>
+        <Route path='/profile/:id' element={<ProfilePage />}/>
+        <Route path='/edit/:id' element={<EditPage />}/>
         <Route path='/create' element={<CreatePage/>}/>
       </Routes>
     </div>

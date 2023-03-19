@@ -28,6 +28,9 @@
 }
 
 /* name age gender  div*/
+.nagdiv{
+    width: 60%;
+}
 .profileusername{
     margin-top: 40px;
     font-family: var(--font_Julee);

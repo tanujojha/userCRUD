@@ -1,53 +1,61 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./editForm.css";
 import Button from '@mui/material/Button';
+import { UserContext } from '../../context/userContext';
+import { useFormik } from 'formik';
 
 function EditForm() {
 
-    const data = {
-        "name": "Ms. Donald Jaskolski",
-        "age": 33,
-        "email": "Leopold_Wyman@example.net",
-        "country": "Lao People's Democratic Republic",
-        "gender": "male",
-        "image": "https://loremflickr.com/640/480",
-        "createdAt": "2086-11-26T21:54:07.753Z",
-        "id": "1"
-      };
+    const context = useContext(UserContext);
+    const {singleUser, editProfile} = context;
+
+    const formik = useFormik({
+        initialValues: {
+            id: singleUser.id,
+            name: singleUser.name,
+            email: singleUser.email,
+            age: singleUser.age,
+            gender: singleUser.gender,
+            country: singleUser.country
+        },
+        onSubmit: (values)=>{
+            editProfile(values)
+        }
+    })
 
 
   return (
     <div className='formdiv'>
-        <form>
+        <form onSubmit={formik.handleSubmit}>
             
             <div className="row mb-3">
-                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Name</label>
+                <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                 <div className="col-sm-10">
-                    <input value={data.name} type="text" className="form-control" id="inputEmail3"/>
+                    <input onChange={formik.handleChange} value={formik.values.name} type="text" className="form-control" id="name"/>
                 </div>
             </div>
             <div className="row mb-3">
-                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
                 <div className="col-sm-10">
-                    <input value={data.email} type="email" className="form-control" id="inputEmail3"/>
+                    <input onChange={formik.handleChange} value={formik.values.email} type="email" className="form-control" id="email"/>
                 </div>
             </div>
             <div className="row mb-3">
-                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Age</label>
+                <label htmlFor="age" className="col-sm-2 col-form-label">Age</label>
                 <div className="col-sm-10">
-                    <input value={data.age} type="text" className="form-control" id="inputEmail3"/>
+                    <input onChange={formik.handleChange} value={formik.values.age} type="text" className="form-control" id="age"/>
                 </div>
             </div>
             <div className="row mb-3">
-                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Gender</label>
+                <label htmlFor="gender" className="col-sm-2 col-form-label">Gender</label>
                 <div className="col-sm-10">
-                    <input value={data.gender} type="text" className="form-control" id="inputEmail3"/>
+                    <input onChange={formik.handleChange} value={formik.values.gender} type="text" className="form-control" id="gender"/>
                 </div>
             </div>
             <div className="row mb-3">
-                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Country</label>
+                <label htmlFor="country" className="col-sm-2 col-form-label">Country</label>
                 <div className="col-sm-10">
-                    <input value={data.country} type="text" className="form-control" id="inputEmail3"/>
+                    <input onChange={formik.handleChange} value={formik.values.country} type="text" className="form-control" id="country"/>
                 </div>
             </div>
 

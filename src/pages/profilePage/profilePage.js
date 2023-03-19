@@ -5,7 +5,7 @@ import "./profilePage.css";
 function ProfilePage() {
   return (
     <div className='profilepagediv'>
-        <ProfileCard/>
+        <ProfileCard />
     </div>
   )
 }

@@ -6,7 +6,7 @@ function EditPage() {
   return (
     <div className='editdiv'>
         <h2 className='edithead'>Edit Profile</h2>
-        <EditForm/>
+        <EditForm />
     </div>
   )
 }

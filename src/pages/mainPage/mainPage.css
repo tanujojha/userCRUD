@@ -1,5 +1,8 @@
 .maindiv{
-    /* background-color: rgb(166, 188, 208); */
     background-color: rgb(187, 187, 222);
-    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }

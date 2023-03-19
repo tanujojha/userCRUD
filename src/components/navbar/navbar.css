@@ -9,7 +9,12 @@
 
 #head{
     font-family: var(--font_Julee);
-    font-size: 2.5em;
+    font-size: 2em;
+    margin-left: 60px;
+}
+
+#homebtn, #createbtn{
+  font-family: var(--font_Julee);
 }
 
 .searchicon{
@@ -18,6 +23,12 @@
 
 @media screen and (max-width: 780px) {
     #head {
-      margin-left: 1px;
+      margin-left: 0px;
     }
+}
+
+@media screen and (max-width: 480px) {
+  #head {
+    margin-right: 110px;
   }
+}
