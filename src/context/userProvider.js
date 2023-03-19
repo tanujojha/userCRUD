@@ -5,7 +5,8 @@ import { UserContext } from "./userContext";
 
 const UserProvider = ({children})=>{
   
-  const url = process.env.REACT_APP_MOCK_API;
+  const API_KEY = process.env.REACT_APP_MOCK_API_KEY;
+  const url = `https://${API_KEY}.mockapi.io/userCrud`
   const navigate = useNavigate()
 
     const [users, setUsers] = useState([]);
