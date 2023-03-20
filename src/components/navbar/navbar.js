@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./navbar.css";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,6 +11,8 @@ import { Button } from '@mui/material';
 
 
 function Navbar() {
+
+  const navigate = useNavigate()
 
   return (
       <div className='navbardiv'>
@@ -24,8 +27,8 @@ function Navbar() {
                   >
                     UserCRUD
                   </Typography>
-                  <Button id='homebtn' href='/' color="inherit">Home</Button>
-                  <Button id='createbtn' href='/create' color="inherit">Create</Button>
+                  <Button id='homebtn' onClick={()=>navigate("/")} color="inherit">Home</Button>
+                  <Button id='homebtn' onClick={()=>navigate("/create")} color="inherit">Create</Button>
                 </Toolbar>
             </AppBar>
         </Box>
